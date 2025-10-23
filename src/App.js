@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import './App.css';
-import Header from './Header'
-import Cart from './Cart'
-import Home from './Home'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import Header from './components/layout/Header'
+import Cart from './components/cart/Cart'
+import Home from './components/layout/Home'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import styled from 'styled-components'
-import { db, auth } from './firebase'
-import Login from './Login'
+import { db, auth } from './config/firebase'
+import Login from './components/auth/Login'
 
 function App() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
