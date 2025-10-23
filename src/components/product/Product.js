@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import { db } from '../../config/firebase'
 
 function Product({ title, price, rating, image, id }) {
@@ -52,8 +53,6 @@ function Product({ title, price, rating, image, id }) {
     )
 }
 
-export default Product
-
 const Container = styled.div`
     background-color: white;
     z-index: 100;
@@ -91,3 +90,13 @@ const AddToCartButton = styled.button`
     border-radius: 2px;
     cursor: pointer;
 `
+
+Product.propTypes = {
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired
+}
+
+export default Product

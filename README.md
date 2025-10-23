@@ -8,8 +8,9 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://clone-mar21.web.app/)
-[![GitHub Issues](https://img.shields.io/github/issues/CleverProgrammers/react-challenge-march21-amazon-clone?style=for-the-badge)](https://github.com/CleverProgrammers/react-challenge-march21-amazon-clone/issues)
-[![GitHub Stars](https://img.shields.io/github/stars/CleverProgrammers/react-challenge-march21-amazon-clone?style=for-the-badge)](https://github.com/CleverProgrammers/react-challenge-march21-amazon-clone/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/Semir-Harun/amazon-clone-react-professional?style=for-the-badge)](https://github.com/Semir-Harun/amazon-clone-react-professional/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/Semir-Harun/amazon-clone-react-professional?style=for-the-badge)](https://github.com/Semir-Harun/amazon-clone-react-professional/stargazers)
+[![CI/CD Pipeline](https://img.shields.io/github/actions/workflow/status/Semir-Harun/amazon-clone-react-professional/ci-cd.yml?branch=main&style=for-the-badge&label=CI%2FCD)](https://github.com/Semir-Harun/amazon-clone-react-professional/actions)
 
 </div>
 
@@ -32,9 +33,37 @@ A full-featured Amazon clone built with React and Firebase, showcasing modern e-
 
 **Live Application:** [https://clone-mar21.web.app/](https://clone-mar21.web.app/)
 
+### Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    CLIENT SIDE (React)                     │
+├─────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │
+│  │   Header    │  │    Home     │  │    Cart     │        │
+│  └─────────────┘  └─────────────┘  └─────────────┘        │
+│         │                │                │               │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │
+│  │   Login     │  │   Product   │  │  CartItem   │        │
+│  └─────────────┘  └─────────────┘  └─────────────┘        │
+├─────────────────────────────────────────────────────────────┤
+│                    STATE MANAGEMENT                        │
+│   • Local State (useState, useEffect)                     │
+│   • Context API for user authentication                   │
+│   • Firebase real-time listeners                          │
+├─────────────────────────────────────────────────────────────┤
+│                     BACKEND (Firebase)                     │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │
+│  │Firebase Auth│  │  Firestore  │  │   Hosting   │        │
+│  │• Google Auth│  │• Products   │  │• Static Site│        │
+│  │• User Mgmt  │  │• Cart Items │  │• SSL/CDN    │        │
+│  └─────────────┘  └─────────────┘  └─────────────┘        │
+└─────────────────────────────────────────────────────────────┘
+```
+
 ### Screenshots
 
-*Add screenshots of your application here*
+*Screenshots will be added after deployment*
 
 ## 🛠️ Built With
 
@@ -54,6 +83,13 @@ A full-featured Amazon clone built with React and Firebase, showcasing modern e-
 - **Create React App** (5.0.1) - React development environment
 - **React Number Format** (4.5.1) - Number formatting component
 - **Web Vitals** (1.0.1) - Performance monitoring
+
+### Code Quality & Engineering
+- **ESLint** - Code quality and consistency
+- **Prettier** - Code formatting
+- **Jest & React Testing Library** - Automated testing
+- **GitHub Actions** - CI/CD pipeline
+- **Environment Configuration** - Secure config management
 
 ## 📋 Prerequisites
 
@@ -116,12 +152,36 @@ src/
 
 ## 🔧 Available Scripts
 
-In the project directory, you can run:
-
+### Development
 - **`npm start`** - Runs the app in development mode
-- **`npm test`** - Launches the test runner
+- **`npm test`** - Launches the test runner in watch mode
 - **`npm run build`** - Builds the app for production
 - **`npm run eject`** - Ejects from Create React App (one-way operation)
+
+### Code Quality
+- **`npm run lint`** - Run ESLint to check code quality
+- **`npm run lint:fix`** - Fix ESLint errors automatically
+- **`npm run test:coverage`** - Run tests with coverage report
+- **`npm run test:ci`** - Run tests in CI mode
+
+### Deployment & Analysis
+- **`npm run serve`** - Serve the built app locally
+- **`npm run analyze`** - Analyze bundle size
+- **`npm run deploy`** - Deploy to Firebase Hosting
+
+## 🧪 Testing
+
+This project includes comprehensive testing:
+
+- **Unit Tests** - Component behavior and functionality
+- **Integration Tests** - Component interactions
+- **Coverage Reports** - Code coverage tracking
+- **CI/CD Testing** - Automated testing on every commit
+
+Run tests with coverage:
+```bash
+npm run test:coverage
+```
 
 ## 🚀 Deployment
 
